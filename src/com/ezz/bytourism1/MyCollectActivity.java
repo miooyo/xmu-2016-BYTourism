@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by 37492 on 2016/4/7.
  */
 public class MyCollectActivity extends BaseActivity {
-	private ImageButton btn_back;
+	private ImageButton btn_back,route;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,18 @@ public class MyCollectActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
+        route = (ImageButton) findViewById(R.id.routes);
+        route.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+               turnToRoutes();
+            }
+        });
     }
-    public void turnToRoutes(View v){
-   /*     Intent intent = new Intent(MyCollectActivity.this,RoutesCollectActivity.class);
+    public void turnToRoutes(){
+        Intent intent = new Intent(MyCollectActivity.this,RoutesCollectList.class);
         startActivity(intent);
-   */ }
+    }
     
 }

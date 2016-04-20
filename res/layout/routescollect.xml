@@ -23,16 +23,17 @@
 
 
 	</LinearLayout>
+
+	<ListView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:paddingBottom="3dp"
+android:paddingLeft="10dp"
+android:id="@+id/routeslist"/>
+
 	<ScrollView
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:id="@+id/scrollView">
-		<ListView
-        android:layout_width="match_parent"
-        android:layout_height="201dp"
-        android:paddingBottom="3dp"
-        android:paddingLeft="10dp"
-        android:id="@+id/routeslist"/>
-	</ScrollView>
+			android:id="@+id/scrollView"></ScrollView>
 
 </LinearLayout>

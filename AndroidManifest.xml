@@ -44,11 +44,18 @@
 
         </activity>
 			<activity
-			    android:name=".AllRoutes"
-			    />
-			<activity android:name=".MyCollectActivity"></activity>
-			<activity android:name=".RoutesCollectActivity"></activity>
-			<activity android:name=".RoutesCollectList"></activity>
+			    android:name=".AllRoutes">
+
+            </activity>
+			<activity android:name=".MyCollectActivity">
+
+            </activity>
+			<activity android:name=".RoutesCollectActivity">
+
+            </activity>
+			<activity android:name=".RoutesCollectList">
+
+            </activity>
 			
     </application>
 
