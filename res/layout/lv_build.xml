@@ -8,19 +8,19 @@
             android:layout_height="45dp"
             android:orientation="horizontal">
 
-        <EditText
+        <TextView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
 
                 android:id="@+id/editText3" android:layout_weight="0.22" android:text="同城约" android:autoText="false"
                 android:gravity="center" android:background="#eff8fb"/>
-        <EditText android:layout_width="20dp" android:layout_height="match_parent" android:layout_gravity="center"
+        <TextView android:layout_width="20dp" android:layout_height="match_parent" android:layout_gravity="center"
                   android:id="@+id/editText4" android:layout_weight="0.22" android:text="多城约" android:autoText="false"
                   android:gravity="center" android:background="#eff8fb"/>
-        <EditText android:layout_width="20dp" android:layout_height="match_parent" android:layout_gravity="center"
+        <TextView android:layout_width="20dp" android:layout_height="match_parent" android:layout_gravity="center"
                   android:id="@+id/editText5" android:layout_weight="0.22" android:text="创建邀请" android:autoText="false"
-                  android:gravity="center" android:background="#d6eff9"/>
+                  android:gravity="center" android:background="#caebf8"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
