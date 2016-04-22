@@ -113,13 +113,13 @@
                         android:src="@drawable/park_1_1" />
 
                     <ImageView
-                        android:layout_width="145dp"
-                        android:layout_height="match_parent"
-                        
-                        android:layout_weight="1"
-                         android:layout_marginLeft="5dp"
-                         android:layout_marginRight="5dp"
-                        android:src="@drawable/haidao_1" />
+                            android:layout_width="145dp"
+                            android:layout_height="match_parent"
+
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/haidao_1" android:id="@+id/lvbutton" android:onClick="turnToLvSelect"/>
                 </LinearLayout>
 
                 <LinearLayout

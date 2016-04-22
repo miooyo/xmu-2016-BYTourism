@@ -25,6 +25,7 @@ public class Personal_centerActivity extends BaseActivity {
         userid = (TextView)findViewById(R.id.idview);
         re = (RelativeLayout)findViewById(R.id.relative4);
         yep = (RelativeLayout)findViewById(R.id.yep);
+
         buttonpath = (ImageButton) findViewById(R.id.buttonpath);
         buttonpath.setOnClickListener(new OnClickListener() {
 			

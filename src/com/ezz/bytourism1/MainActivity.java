@@ -132,5 +132,9 @@ public class MainActivity extends Activity {
 			});
 			
 		}
+	public void turnToLvSelect(View v){
+		Intent intent = new Intent(MainActivity.this,LvSelectActivity.class);
+		startActivity(intent);
+	}
 		
 }
