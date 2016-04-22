@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"
         android:layout_toRightOf="@+id/imageView1"
-        android:hint="朋友昵称"
+        android:text="朋友昵称"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
