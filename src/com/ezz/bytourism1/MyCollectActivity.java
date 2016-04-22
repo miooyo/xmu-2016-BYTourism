@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by 37492 on 2016/4/7.
  */
 public class MyCollectActivity extends BaseActivity {
-	private ImageButton btn_back,route;
+	private ImageButton btn_back,route,buttonscenic;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,16 @@ public class MyCollectActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
+        buttonscenic = (ImageButton) findViewById(R.id.buttonscenic);
+        buttonscenic.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO 自动生成的方法存根
+                Intent intent = new Intent(MyCollectActivity.this,SightCollectList.class);
+                startActivity(intent);
+            }
+        });
         route = (ImageButton) findViewById(R.id.routes);
         route.setOnClickListener(new OnClickListener() {
 
