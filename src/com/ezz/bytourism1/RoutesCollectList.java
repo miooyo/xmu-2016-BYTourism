@@ -53,7 +53,7 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
         //处理数据
         userid = getPreferenceId();
         BmobQuery<Collect> query_city = new BmobQuery<Collect>();
-        query_city.addWhereEqualTo("userid", 5);
+        query_city.addWhereEqualTo("userid", userid);
         query_city.addWhereEqualTo("type", 2);
         //获取用户所有路线
         query_city.findObjects(RoutesCollectList.this, new FindListener<Collect>() {
