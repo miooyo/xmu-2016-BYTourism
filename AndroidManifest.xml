@@ -53,10 +53,19 @@
 			<activity android:name=".RoutesCollectActivity">
 
             </activity>
-			<activity android:name=".RoutesCollectList">
+			<activity android:name=".MyRoutesCollectList">
             </activity>
             <activity android:name=".LvSelectActivity">
             </activity>
+        <activity android:name=".LvBildInfoActivity">
+        </activity>
+        <activity android:name=".MyPartnerActivity">
+        </activity>
+        <activity android:name=".MyPatnerInfo">
+        </activity>
+
+
+
 			
     </application>
 

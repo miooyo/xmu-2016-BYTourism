@@ -3,14 +3,11 @@ package com.ezz.bytourism1;
 /**
  * Created by 37492 on 2016/4/7.
  */
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,12 +30,12 @@ import com.ezz.bean.Scenicroute;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 
-public class RoutesCollectList extends BaseActivity implements OnItemClickListener,OnScrollListener{
+public class MyRoutesCollectList extends BaseActivity implements OnItemClickListener,OnScrollListener{
     private ListView listView;
     private ArrayAdapter< String> arr_adapter;
     private SimpleAdapter simp_adapter;
     private Integer userid;
-    private Integer i = 0;;
+    private Integer i = 0;
     private List<Map<String, Object>> dataList;
     private String[] arr_data = {""};
     private String[] route = {"","","","",""};
@@ -46,60 +43,60 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+        // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         super.onCreate(savedInstanceState);
         setContentView(R.layout.routescollect);
         listView = (ListView)findViewById(R.id.routeslist);
-        //´¦ÀíÊý¾Ý
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         userid = getPreferenceId();
         BmobQuery<Collect> query_city = new BmobQuery<Collect>();
         query_city.addWhereEqualTo("userid", userid);
         query_city.addWhereEqualTo("type", 2);
-        //»ñÈ¡ÓÃ»§ËùÓÐÂ·Ïß
-        query_city.findObjects(RoutesCollectList.this, new FindListener<Collect>() {
+        //ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+        query_city.findObjects(MyRoutesCollectList.this, new FindListener<Collect>() {
             @Override
             public void onSuccess(List<Collect> collects) {
 
 
 
-                // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 for (Collect collect : collects) {
-                    //¶ÔÃ¿Ò»¸öÂ·Ïß»ñÈ¡ÏàÓ¦µÄµØµã
+                    //ï¿½ï¿½Ã¿Ò»ï¿½ï¿½Â·ï¿½ß»ï¿½È¡ï¿½ï¿½Ó¦ï¿½ÄµØµï¿½
                     Integer id = collect.getCid();
                     Message msg = new Message();
                     msg.what = 1;
                     msg.obj = id;
-                    System.out.println("-----------------Â·Ïß-----------------"+id);
+                    System.out.println("-----------------Â·ï¿½ï¿½-----------------"+id);
 //                    handler.sendMessage(msg);
                     arr_data[0] = id.toString();
-                    simp_adapter = new SimpleAdapter(RoutesCollectList.this, getData(),
+                    simp_adapter = new SimpleAdapter(MyRoutesCollectList.this, getData(),
                             R.layout.routescollect_item,new String[]{"pic","text","id"} ,new int[]{R.id.image,R.id.title,R.id.age});
 //
                     listView.setAdapter(simp_adapter);
-                    listView.setOnItemClickListener(RoutesCollectList.this);
-                    listView.setOnScrollListener(RoutesCollectList.this);
-                    //»ñÈ¡Â·ÏßÏêÏ¸
+                    listView.setOnItemClickListener(MyRoutesCollectList.this);
+                    listView.setOnScrollListener(MyRoutesCollectList.this);
+                    //ï¿½ï¿½È¡Â·ï¿½ï¿½ï¿½ï¿½Ï¸
                     //getRouteName(id);
                 }
             }
 
             @Override
             public void onError(int arg0, String arg1) {
-                // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Log.i("fail!!---60", arg0 + arg1);
             }
         });
 
 //        end
 
-//        1.´´½¨Ò»¸öÊý¾ÝÊÊÅäÆ÷
-//        ArrayAdapter(ÉÏÏÂÎÄ£¬µ±Ç°ListView¼ÓÔØÃ¿Ò»¸öÁÐ±íÏîËù¶ÔÓ¦µÄ²¼¾ÖÎÄ¼þ£¬Êý¾ÝÔ´)
-//        2.ÊÊÅäÆ÷¼ÓÔØÊý¾ÝÔ´
-//        3.ÊÓÍ¼£¨ListView£©¼ÓÔØÊÊÅäÆ÷
+//        1.ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//        ArrayAdapter(ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ç°ListViewï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´)
+//        2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´
+//        3.ï¿½ï¿½Í¼ï¿½ï¿½ListViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		/*SimpleAdapter
-		 * 1.´´½¨Ò»¸öÊÊÅäÆ÷
-		 * 2.ÊÊÅäÆ÷¼ÓÔØÊý¾ÝÔ´
-		 * 3.ÊÓÍ¼(ListView)¼ÓÔØÊÊÅäÆ÷
+		 * 1.ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´
+		 * 3.ï¿½ï¿½Í¼(ListView)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 * listView.setAapter(arr_adapter)
 		 * */
 
@@ -109,13 +106,13 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
 
         /**
          * SimpleAdapter:
-         * context£ºÉÏÏÂÎÄ
-         * data£ºÊý¾ÝÔ´(List< ?extends Map<String,?>>data)Ò»¸öMapËù×é³ÉµÄList¼¯ºÏ
-         * 			  Ã¿Ò»¸öMap¶¼»áÈ¥¶ÔÓ¦ListViewÁÐ±íµÄÒ»ÐÐ
-         * 			 Ã¿Ò»¸öMap<¼ü-Öµ¶Ô>ÖÐµÄ¼ü±ØÐë°üº¬ËùÓÐfromËùÖ¸¶¨µÄ¼ü
-         * resource£ºÁÐ±íÏîµÄ²¼¾ÖÎÄ¼þID
-         * from£ºMapÖÐµÄ¼üÃû
-         * to£º°ó¶¨Êý¾ÝÔ´ÊÓÍ¼µÄID£¬Óëfrom³É¶ÔÓ¦¹ØÏµ
+         * contextï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+         * dataï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´(List< ?extends Map<String,?>>data)Ò»ï¿½ï¿½Mapï¿½ï¿½ï¿½ï¿½Éµï¿½Listï¿½ï¿½ï¿½ï¿½
+         * 			  Ã¿Ò»ï¿½ï¿½Mapï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½Ó¦ListViewï¿½Ð±ï¿½ï¿½Ò»ï¿½ï¿½
+         * 			 Ã¿Ò»ï¿½ï¿½Map<ï¿½ï¿½-Öµï¿½ï¿½>ï¿½ÐµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½fromï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½
+         * resourceï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ID
+         * fromï¿½ï¿½Mapï¿½ÐµÄ¼ï¿½ï¿½ï¿½
+         * toï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Í¼ï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½fromï¿½É¶ï¿½Ó¦ï¿½ï¿½Ïµ
          * */
 
 
@@ -124,7 +121,7 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
         for(int i = 0;i<arr_data.length;i++){
             Map<String, Object> map = new HashMap<String,Object>();
             map.put("pic", R.drawable.ic_launcher);
-            map.put("text", "Â·Ïß"+arr_data[i]);
+            map.put("text", "Â·ï¿½ï¿½"+arr_data[i]);
             map.put("id", arr_data[i]);
             dataList.add(map);
         }
@@ -133,23 +130,23 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             final long id) {
-        // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+        // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         HashMap<String,String> text =  (HashMap<String,String>) listView.getItemAtPosition(position);
         String itemId = text.get("id");
         Toast.makeText(this, "position="+position +"text = "+text.get("id"), Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(RoutesCollectList.this,AllSightDetail.class);
-        intent.putExtra("city_name", "ÏÃÃÅ");
+        Intent intent = new Intent(MyRoutesCollectList.this,AllSightDetail.class);
+        intent.putExtra("city_name", "ï¿½ï¿½ï¿½ï¿½");
         intent.putExtra("rid", itemId);
         startActivity(intent);
     }
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-        // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+        // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         switch (scrollState) {
             case SCROLL_STATE_FLING:
                 Map<String, Object> map = new HashMap<String,Object>();
                 map.put("pic", R.drawable.ic_launcher);
-                map.put("text", "Ôö¼ÓÏî");
+                map.put("text", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                 dataList.add(map);
                 simp_adapter.notifyDataSetChanged();
                 break;
@@ -164,33 +161,33 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
-        // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+        // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     }
     protected String getRouteName(int id){
         BmobQuery<Scenicroute> scenicroute_query = new BmobQuery<Scenicroute>();
         scenicroute_query.addWhereEqualTo("id", id);
         final String[] name = {""};
-        scenicroute_query.findObjects(RoutesCollectList.this, new FindListener<Scenicroute>() {
+        scenicroute_query.findObjects(MyRoutesCollectList.this, new FindListener<Scenicroute>() {
             @Override
             public void onError(int arg0, String arg1) {
-                // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Log.i("fail---70", arg0 + arg1);
             }
 
             @Override
             public void onSuccess(final List<Scenicroute> scenicroutes) {
-                //Â·ÏßÐÅÏ¢
+                //Â·ï¿½ï¿½ï¿½ï¿½Ï¢
 
-                // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 if (scenicroutes.get(0).getOne() != 0) {
                     success[0] = "0";
                     BmobQuery<Scenic> query_scenic = new BmobQuery<Scenic>();
                     query_scenic.addWhereEqualTo("id", scenicroutes.get(0).getOne());
-                    query_scenic.findObjects(RoutesCollectList.this, new FindListener<Scenic>() {
+                    query_scenic.findObjects(MyRoutesCollectList.this, new FindListener<Scenic>() {
                         @Override
                         public void onError(int arg0, String arg1) {
-                            // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                            // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                             Log.i("fail---70", arg0 + arg1);
                         }
 
@@ -218,13 +215,13 @@ public class RoutesCollectList extends BaseActivity implements OnItemClickListen
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    System.out.println("-----------------Ö´ÐÐ--"+arr_data[0]+"-----------------");
+                    System.out.println("-----------------Ö´ï¿½ï¿½--"+arr_data[0]+"-----------------");
                     arr_data[0] = msg.obj.toString();
-                    simp_adapter = new SimpleAdapter(RoutesCollectList.this, getData(), R.layout.routescollect_item,new String[]{"pic","text"} ,new int[]{R.id.image,R.id.title});
+                    simp_adapter = new SimpleAdapter(MyRoutesCollectList.this, getData(), R.layout.routescollect_item,new String[]{"pic","text"} ,new int[]{R.id.image,R.id.title});
 //
                     listView.setAdapter(simp_adapter);
-//                    listView.setOnItemClickListener(RoutesCollectList.this);
-//                    listView.setOnScrollListener(RoutesCollectList.this);
+//                    listView.setOnItemClickListener(MyRoutesCollectList.this);
+//                    listView.setOnScrollListener(MyRoutesCollectList.this);
                     break;
                 case 2:
 

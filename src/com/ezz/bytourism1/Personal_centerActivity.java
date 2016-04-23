@@ -55,6 +55,10 @@ public class Personal_centerActivity extends BaseActivity {
         Intent intent = new Intent(Personal_centerActivity.this,MainActivity.class);
         startActivity(intent);
     }
+    public void turnTolvInfo(View v){
+        Intent intent = new Intent(Personal_centerActivity.this,MyPartnerActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onNewIntent(Intent intent) {

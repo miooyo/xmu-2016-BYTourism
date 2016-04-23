@@ -36,7 +36,7 @@
             android:layout_alignBaseline="@+id/back_btn"
             android:layout_alignBottom="@+id/back_btn"
             android:layout_centerHorizontal="true"
-            android:text="我的驴友"
+            android:text="我的驴友邀请"
             android:textSize="18sp" />
     </RelativeLayout>
     

@@ -1,12 +1,10 @@
 package com.ezz.bytourism1;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 /**
  * Created by 37492 on 2016/4/7.
@@ -27,7 +25,7 @@ public class MyCollectActivity extends BaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Intent intent = new Intent(MyCollectActivity.this,Personal_centerActivity.class);
 				startActivity(intent);
 			}
@@ -37,7 +35,7 @@ public class MyCollectActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Intent intent = new Intent(MyCollectActivity.this,SightCollectList.class);
                 startActivity(intent);
             }
@@ -52,7 +50,7 @@ public class MyCollectActivity extends BaseActivity {
         });
     }
     public void turnToRoutes(){
-        Intent intent = new Intent(MyCollectActivity.this,RoutesCollectList.class);
+        Intent intent = new Intent(MyCollectActivity.this,MyRoutesCollectList.class);
         startActivity(intent);
     }
     

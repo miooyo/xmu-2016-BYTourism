@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:weightSum="1">
+    <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent">
+    <TextView
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:text="idone"
+            android:id="@+id/idone" android:textSize="20dp" android:textIsSelectable="true"
+            android:layout_weight="0.02"/>
+    <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="startid"
+            android:id="@+id/startid"  android:textSize="20dp" android:textColor="#706565"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="——"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/hline"/>
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="endid"
+            android:id="@+id/endid"
+            android:textSize="20dp" android:textColor="#706565"/>
+        <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="   "
+                android:id="@+id/textView13"/>
+
+    </LinearLayout>
+    <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:id="@+id/LinearLayout2">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:id="@+id/title" android:layout_weight="0.06" android:textSize="23dp"
+                android:textColor="#3f99c6"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yuetime"
+                android:layout_alignRight="@id/LinearLayout2"
+                android:id="@+id/yuetime" android:textSize="20dp" android:layout_weight="0.01"
+                android:textColor="#f3b165"/>
+    </LinearLayout>
+</LinearLayout>
