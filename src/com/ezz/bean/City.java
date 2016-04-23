@@ -3,10 +3,10 @@ package com.ezz.bean;
 import cn.bmob.v3.BmobObject;
 
 public class City extends BmobObject{
-	private int id;
+	private Integer id;
 	private String province;
 	private String cityname;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {

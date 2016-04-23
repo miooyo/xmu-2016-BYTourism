@@ -25,6 +25,7 @@ public class Personal_centerActivity extends BaseActivity {
         userid = (TextView)findViewById(R.id.idview);
         re = (RelativeLayout)findViewById(R.id.relative4);
         yep = (RelativeLayout)findViewById(R.id.yep);
+
         buttonpath = (ImageButton) findViewById(R.id.buttonpath);
         buttonpath.setOnClickListener(new OnClickListener() {
 			
@@ -52,6 +53,10 @@ public class Personal_centerActivity extends BaseActivity {
     }
     public void returnHome(View view){
         Intent intent = new Intent(Personal_centerActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void turnTolvInfo(View v){
+        Intent intent = new Intent(Personal_centerActivity.this,MyPartnerActivity.class);
         startActivity(intent);
     }
 

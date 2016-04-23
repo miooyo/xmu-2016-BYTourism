@@ -1,18 +1,16 @@
 package com.ezz.bytourism1;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 /**
  * Created by 37492 on 2016/4/7.
  */
 public class MyCollectActivity extends BaseActivity {
-	private ImageButton btn_back;
+	private ImageButton btn_back,route,buttonscenic;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +25,33 @@ public class MyCollectActivity extends BaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Intent intent = new Intent(MyCollectActivity.this,Personal_centerActivity.class);
 				startActivity(intent);
 			}
 		});
+        buttonscenic = (ImageButton) findViewById(R.id.buttonscenic);
+        buttonscenic.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                Intent intent = new Intent(MyCollectActivity.this,SightCollectList.class);
+                startActivity(intent);
+            }
+        });
+        route = (ImageButton) findViewById(R.id.routes);
+        route.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+               turnToRoutes();
+            }
+        });
     }
-    public void turnToRoutes(View v){
-   /*     Intent intent = new Intent(MyCollectActivity.this,RoutesCollectActivity.class);
+    public void turnToRoutes(){
+        Intent intent = new Intent(MyCollectActivity.this,MyRoutesCollectList.class);
         startActivity(intent);
-   */ }
+    }
     
 }

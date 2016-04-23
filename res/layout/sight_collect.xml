@@ -19,7 +19,7 @@
 		<EditText
 				android:layout_width="wrap_content"
 				android:layout_height="47dp"
-				android:id="@+id/editText" android:text="我的路线收藏" android:textSize="23dp"/>
+				android:id="@+id/editText" android:text="我的景点收藏" android:textSize="23dp"/>
 
 
 	</LinearLayout>

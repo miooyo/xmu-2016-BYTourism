@@ -33,5 +33,6 @@ public class Collect extends BmobObject{
 	public void setType(int type) {
 		this.type = type;
 	}
+
 	
 }

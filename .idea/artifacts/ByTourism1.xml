@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="ByTourism1">
+    <output-path>$PROJECT_DIR$/classes/artifacts/ByTourism1</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="keyStoreUrl" value="file://" />
+        <option name="proGuardCfgFiles">
+          <list>
+            <option value="file://E:/UserEvaa/jdk1.7.0_80/tools/proguard/proguard-android.txt" />
+          </list>
+        </option>
+      </options>
+    </properties>
+    <root id="archive" name="ByTourism1.apk">
+      <element id="android-final-package" facet="ByTourism1/android/Android" />
+    </root>
+  </artifact>
+</component>

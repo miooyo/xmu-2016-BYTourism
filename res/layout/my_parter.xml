@@ -26,7 +26,7 @@
             android:layout_marginRight="5dp"
            	android:layout_alignParentRight="true"
             android:gravity="center"
-            android:text="添加"
+            android:text="约驴友"
             android:textSize="14sp" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_alignBaseline="@+id/back_btn"
             android:layout_alignBottom="@+id/back_btn"
             android:layout_centerHorizontal="true"
-            android:text="我的好友"
+            android:text="我的驴友邀请"
             android:textSize="18sp" />
     </RelativeLayout>
     
@@ -51,7 +51,7 @@
             android:background="@drawable/input_search"
             android:drawableLeft="@drawable/mirror"
             android:textSize="14sp"
-            android:hint="好友昵称" 
+            android:hint="驴友昵称，时间、地点" 
             android:imeOptions="actionSearch"
             android:completionThreshold="1" 
             android:singleLine="true"/>
